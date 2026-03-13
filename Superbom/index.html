@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Super Sorteio Premiado 2026 - cadastre sua nota fiscal, gere seu cupom e concorra a carros.">
+  <title>SuperBom Supermercados - MEGA SORTEIO 2026!</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="promo-ribbon">
+    <div class="ribbon-content">
+      <span class="ribbon-icon">🎉</span>
+      <span class="ribbon-text">PROMOÇÃO VÁLIDA ATÉ 30/06/2026</span>
+      <span class="ribbon-icon">🎉</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">🛒</div>
+      <div class="brand-info">
+        <div class="anniversary-badge">ANIVERSÁRIO</div>
+        <h1>SuperBom Supermercados</h1>
+        <p class="brand-tagline">Sua compra vale prêmios!</p>
+      </div>
+    </div>
+
+    <nav aria-label="Menu principal">
+      <ul class="nav-list">
+        <li><a class="active" href="index.html">Cadastrar Cupom</a></li>
+        <li><a href="regulamento.html">Regulamento</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero-banner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-text">CONCORRA A</span>
+        <span class="hero-badge-prize">10 CARROS 0KM</span>
+      </div>
+      <h2 class="hero-title">MEGA SORTEIO DE ANIVERSÁRIO</h2>
+      <p class="hero-subtitle">Cadastre sua nota fiscal e concorra automaticamente!</p>
+      <div class="hero-prizes">
+        <div class="prize-item">
+          <span class="prize-icon">🚗</span>
+          <span class="prize-label">10 Carros</span>
+        </div>
+        <div class="prize-separator">+</div>
+        <div class="prize-item">
+          <span class="prize-icon">🎁</span>
+          <span class="prize-label">Prêmios Instantâneos</span>
+        </div>
+        <div class="prize-separator">+</div>
+        <div class="prize-item">
+          <span class="prize-icon">💰</span>
+          <span class="prize-label">Vale Compras</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="page home-page">
+    <div class="promo-steps">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Faça suas compras</h3>
+          <p>Em qualquer unidade SuperBom</p>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Cadastre sua nota</h3>
+          <p>Preencha o formulário abaixo</p>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Concorra aos prêmios</h3>
+          <p>Receba seu cupom por e-mail</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="home-stack">
+      <article class="card home-card cadastro-card">
+        <div class="section-title-promo">
+          <div class="title-badge">CADASTRO RÁPIDO</div>
+          <h2>Preencha seus dados e concorra!</h2>
+          <p>Cada nota fiscal cadastrada gera um cupom da sorte automaticamente.</p>
+        </div>
+
+        <form id="formCadastro" class="form-grid cadastro-form-grid" novalidate>
+          <div class="form-divider full">
+            <div class="divider-header">
+              <span class="divider-icon">📄</span>
+              <h3>Dados da nota fiscal</h3>
+            </div>
+            <p>Informe os dados da compra realizada em uma unidade participante.</p>
+          </div>
+
+          <div class="field">
+            <label for="numeroNota">Número da nota fiscal</label>
+            <input type="text" id="numeroNota" name="numeroNota" placeholder="Digite o número da nota" maxlength="30" required>
+          </div>
+
+          <div class="field">
+            <label for="dataCompra">Data da compra</label>
+            <input type="date" id="dataCompra" name="dataCompra" required>
+          </div>
+
+          <div class="field">
+            <label for="valorCompra">Valor da compra</label>
+            <input type="number" id="valorCompra" name="valorCompra" placeholder="0,00" step="0.01" min="0.01" required>
+          </div>
+
+          <div class="field">
+            <label for="loja">Loja participante</label>
+            <select id="loja" name="loja" required>
+              <option value="">Selecione a unidade</option>
+              <option value="Unidade Centro">Unidade Centro</option>
+              <option value="Unidade Norte">Unidade Norte</option>
+              <option value="Unidade Sul">Unidade Sul</option>
+              <option value="Unidade Leste">Unidade Leste</option>
+              <option value="Unidade Oeste">Unidade Oeste</option>
+            </select>
+          </div>
+
+          <div class="form-divider full">
+            <div class="divider-header">
+              <span class="divider-icon">👤</span>
+              <h3>Dados do participante</h3>
+            </div>
+            <p>Os dados ficam salvos localmente para facilitar o cadastro de uma nova nota fiscal.</p>
+          </div>
+
+          <div class="field full">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" maxlength="80" required>
+          </div>
+
+          <div class="field">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" required>
+          </div>
+
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric" required>
+          </div>
+
+          <div class="field full">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" maxlength="120" required>
+          </div>
+
+          <div class="field">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" inputmode="numeric" required>
+          </div>
+
+          <div class="field field-button">
+            <label class="sr-only" for="buscarCep">Buscar CEP</label>
+            <button type="button" id="buscarCep" class="secondary-btn">Buscar CEP</button>
+          </div>
+
+          <div class="field full">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro" name="logradouro" readonly>
+          </div>
+
+          <div class="field">
+            <label for="numeroCasa">Número da casa</label>
+            <input type="text" id="numeroCasa" name="numeroCasa" placeholder="Ex.: 123" maxlength="20" required>
+          </div>
+
+          <div class="field">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" readonly>
+          </div>
+
+          <div class="field">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" readonly>
+          </div>
+
+          <div class="field field-uf">
+            <label for="uf">UF</label>
+            <input type="text" id="uf" name="uf" readonly>
+          </div>
+        </form>
+      </article>
+
+      <section class="card home-card home-actions promo-card">
+        <div class="section-title-promo">
+          <div class="title-badge success-badge">FINALIZE AQUI</div>
+          <h2>Gerar meu cupom da sorte!</h2>
+          <p>Após confirmar, você receberá seu cupom promocional por e-mail.</p>
+        </div>
+
+        <div class="cupom-box">
+          <div class="cupom-header">
+            <span class="cupom-icon">🎫</span>
+            <span class="cupom-label">Seu cupom da sorte</span>
+          </div>
+          <strong id="cupomGerado" class="cupom-code">Aguardando cadastro</strong>
+          <div class="cupom-footer">
+            <span class="pulse-dot"></span>
+            <small class="status-text">Os dados do participante ficam salvos para próximos cadastros</small>
+          </div>
+        </div>
+
+        <div class="check-field">
+          <input type="checkbox" id="aceiteRegulamento" name="aceiteRegulamento">
+          <label for="aceiteRegulamento">
+            Declaro que li e aceito o
+            <a href="regulamento.html">regulamento da promoção</a>.
+          </label>
+        </div>
+
+        <div id="mensagem" class="message" role="status" aria-live="polite"></div>
+
+        <div class="actions actions-centered">
+          <button type="button" id="salvarCadastro" class="primary-btn">
+            <span class="btn-icon">✓</span>
+            Salvar cadastro e enviar cupom
+          </button>
+        </div>
+
+        <div class="promo-seal">
+          <span class="seal-text">PROMOÇÃO AUTORIZADA</span>
+          <span class="seal-detail">SECAP/ME Nº 05.028394/2026</span>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-promo">
+        <strong>SuperBom Supermercados</strong>
+        <p>Mega Sorteio de Aniversário 2026</p>
+      </div>
+      <div class="footer-credits">
+        <p>Desenvolvido por Lucas de Souza Lima 2026</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
